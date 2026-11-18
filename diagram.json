@@ -1,0 +1,382 @@
+{
+  "board": "openhw-arduino-uno",
+  "components": [
+    {
+      "id": "uno1",
+      "type": "openhw-arduino-uno",
+      "label": "Arduino Uno",
+      "x": 300,
+      "y": 380,
+      "w": 425,
+      "h": 320,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "pir1",
+      "type": "openhw-pir-motion-sensor",
+      "label": "PIR HC-SR501",
+      "x": 20,
+      "y": 90,
+      "w": 100,
+      "h": 100,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "sr04",
+      "type": "openhw-hc-sr04",
+      "label": "HC-SR04",
+      "x": 260,
+      "y": 80,
+      "w": 180,
+      "h": 100,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "lcd1",
+      "type": "openhw-lcd1602-i2c",
+      "label": "LCD 16x2 (I2C)",
+      "x": 820,
+      "y": 80,
+      "w": 300,
+      "h": 120,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "bz1",
+      "type": "openhw-buzzer",
+      "label": "Buzzer",
+      "x": 880,
+      "y": 420,
+      "w": 80,
+      "h": 90,
+      "rotation": 0,
+      "attrs": {}
+    },
+    {
+      "id": "r1",
+      "type": "openhw-resistor",
+      "label": "220 Ohm",
+      "x": 820,
+      "y": 580,
+      "w": 100,
+      "h": 30,
+      "rotation": 0,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "id": "led_red",
+      "type": "openhw-led",
+      "label": "LED Red",
+      "x": 960,
+      "y": 560,
+      "w": 40,
+      "h": 70,
+      "rotation": 0,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "id": "r2",
+      "type": "openhw-resistor",
+      "label": "220 Ohm",
+      "x": 820,
+      "y": 660,
+      "w": 100,
+      "h": 30,
+      "rotation": 0,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "id": "led_green",
+      "type": "openhw-led",
+      "label": "LED Green",
+      "x": 1040,
+      "y": 560,
+      "w": 40,
+      "h": 70,
+      "rotation": 0,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "id": "btn1",
+      "type": "openhw-pushbutton",
+      "label": "Arm/Disarm",
+      "x": 40,
+      "y": 520,
+      "w": 80,
+      "h": 60,
+      "rotation": 0,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "id": "r3",
+      "type": "openhw-resistor",
+      "label": "100 Ohm",
+      "x": 820,
+      "y": 500,
+      "w": 100,
+      "h": 30,
+      "rotation": 0,
+      "attrs": {
+        "value": "100"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "w1",
+      "from": "pir1:VCC",
+      "to": "uno1:5V",
+      "color": "red",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w2",
+      "from": "pir1:OUT",
+      "to": "uno1:2",
+      "color": "yellow",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w3",
+      "from": "pir1:GND",
+      "to": "uno1:gnd_1",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w4",
+      "from": "sr04:VCC",
+      "to": "uno1:5V",
+      "color": "red",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w5",
+      "from": "sr04:TRIG",
+      "to": "uno1:9",
+      "color": "violet",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w6",
+      "from": "sr04:ECHO",
+      "to": "uno1:10",
+      "color": "blue",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w7",
+      "from": "sr04:GND",
+      "to": "uno1:gnd_1",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w13",
+      "from": "bz1:GND",
+      "to": "uno1:gnd_3",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w14",
+      "from": "uno1:7",
+      "to": "r1:p1",
+      "color": "red",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w15",
+      "from": "r1:p2",
+      "to": "led_red:A",
+      "color": "red",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w16",
+      "from": "led_red:K",
+      "to": "uno1:gnd_3",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w17",
+      "from": "uno1:6",
+      "to": "r2:p1",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w18",
+      "from": "r2:p2",
+      "to": "led_green:A",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w19",
+      "from": "led_green:K",
+      "to": "uno1:gnd_3",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w20",
+      "from": "btn1:1l",
+      "to": "uno1:4",
+      "color": "blue",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w21",
+      "from": "btn1:2l",
+      "to": "uno1:gnd_2",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w22",
+      "from": "uno1:8",
+      "to": "r3:p1",
+      "color": "orange",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w23",
+      "from": "r3:p2",
+      "to": "bz1:SIG",
+      "color": "orange",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w40",
+      "from": "lcd1:VCC",
+      "to": "uno1:5V",
+      "color": "red",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w41",
+      "from": "lcd1:GND",
+      "to": "uno1:gnd_2",
+      "color": "black",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w42",
+      "from": "lcd1:SDA",
+      "to": "uno1:A4",
+      "color": "green",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    },
+    {
+      "id": "w43",
+      "from": "lcd1:SCL",
+      "to": "uno1:A5",
+      "color": "yellow",
+      "waypoints": [],
+      "isBelow": false,
+      "isSocket": false,
+      "isHidden": false,
+      "isHelp": false
+    }
+  ]
+}
